@@ -31,7 +31,7 @@ if [ "$1" != "" ]; then
           fi
           # je copie recursivement le dossier nomcommune situé dans /usr/... vers celui situé dans /opt/...
           echo "$ok Je copie 📂 ${bold}/usr${normal}/share/publik/themes/imio/static/${bold}$2 ${normal}  vers 📂 ${bold}/opt${normal}/publik/scripts/imio-publik-themes/static/ "
-          cp -r /usr/share/publik/themes/imio/static/$2 /opt/publik/scripts/imio-publik-themes/static/$2
+          cp -ru /usr/share/publik/themes/imio/static/$2 /opt/publik/scripts/imio-publik-themes/static/
           # cool UX
           sleep 0.6
         # sinon je notifie que l'argument ne correspond à aucun dossier dans static/
@@ -64,12 +64,11 @@ if [ "$1" != "" ]; then
         sed -i "s|../../publik-base-theme/|../../../publik-base/|g" /usr/share/publik/themes/imio/static/$2/style.scss
         echo "$ok ${bold}../../publik-base-theme/${normal} a été modifié en ${bold}../../../publik-base/${normal}  dans 📄  styles.scss"
         sleep 0.3
-        # ???? serait-ce utile de : prompt sass styles : y or n ?
+        # serait-ce utile de : prompt sass styles : y or n ?
         echo "$ok J'exécute '${bold}sass /usr/share/publik/themes/imio/static/$2/style.scss /usr/share/publik/themes/imio/static/$2/style.css${normal}'"
         sass /usr/share/publik/themes/imio/static/$2/style.scss /usr/share/publik/themes/imio/static/$2/style.css
       else 
         echo "je ne trouve pas l'occurence   @import '../../publik-base-theme/static/includes/publik';   dans  📂 /usr/share/publik/themes/imio/static/$2/style.scss "
-        # ???? serait-ce utile de prompt : voulez-vous que je rétablisse le chemin d'origine des occurences dans styles.scss
       fi
      else 
        echo $erarg
