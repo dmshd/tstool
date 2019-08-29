@@ -18,6 +18,7 @@ At the moment the possibilities are :
 * `tool.sh -r or --restore nomcommune` will copy /nomcomune from /opt/....../static to /usr/...../static  
 * `tool.sh -s or --save nomcommune` will restore import path(s) in nomcommune/style.sccs and copy from /usr/... to /opt/...
 * `tool.sh -S or --switch nomcommune` will modify import path(s) in nomcommune/style.scss and sass the whole thing
+* `tool.sh --sass nomcommune` will sass the /usr/......./nomcommune/styles.scss no matter where we are situated  
 
 These commands can be used from any directories.
 All ideas, suggestions, code review, is welcome.
