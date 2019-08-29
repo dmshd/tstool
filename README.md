@@ -22,3 +22,9 @@ At the moment the possibilities are :
 
 These commands can be used from any directories.
 All ideas, suggestions, code review, is welcome.
+
+#### Ideas 
+* ajouter le changement des variables du site-options.cfg hobo (global_title, slug, ...) pour switcher à la volée. Il faut paramétrer cela dans un trucmuche-extra.json et `sudo -u hobo-manage /chemin/vers/extra.json` 
+ voir ticker entreouvert relatif  
+* a `tool.sh --update nomcommune` that ssh connect to the right ts-prod adress and does a docker exec -ti nomcommune_blahblabhla_1 bash and then does an apt update && apt-install imio-publik-themes   
+* checker si exsite `nomcommune/banner.jpg` et modifier la valeur de `$header-banner-image:` en fonction (true/false).
